@@ -1,19 +1,20 @@
 ﻿using FootballFieldManagement.Controllers;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FootballFieldManagement
 {
     public partial class MainForm : Form
     {
-        private readonly FieldController _fieldController;
+        private readonly IServiceProvider _serviceProvider;
         private Form _activeChildForm = null;
         private Button _activeButton = null;
 
-        public MainForm(FieldController fieldController)
+        public MainForm(IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            _fieldController = fieldController;
+            _serviceProvider = serviceProvider;
             //SetUserInfo();
-            
+
         }
 
         //private void SetUserInfo()
@@ -30,7 +31,8 @@ namespace FootballFieldManagement
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            LoadChildForm(new FieldForm(_fieldController));
+            // Khi load form chính, tạo FieldForm bằng DI
+            LoadChildForm(_serviceProvider.GetRequiredService<FieldForm>());
         }
 
         private void LoadChildForm(Form childForm)
@@ -68,13 +70,15 @@ namespace FootballFieldManagement
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            LoadChildForm(new FieldForm());
+            // Khi click nút, tạo CustomerForm bằng DI
+            LoadChildForm(_serviceProvider.GetRequiredService<CustomerForm>());
             highlightButton((Button)sender);
         }
 
         private void btnField_Click(object sender, EventArgs e)
         {
-            LoadChildForm(new FieldForm(_fieldController));
+            // Khi click nút, tạo FieldForm bằng DI
+            LoadChildForm(_serviceProvider.GetRequiredService<FieldForm>());
             highlightButton((Button)sender);
         }
 

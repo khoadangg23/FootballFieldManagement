@@ -28,9 +28,6 @@ namespace FootballFieldManagement
             // Build the service provider
             var serviceProvider = servicesCollection.BuildServiceProvider();
 
-            // Resolve the main form
-            var fieldController = serviceProvider.GetRequiredService<FieldController>();
-
             var mainForm = serviceProvider.GetRequiredService<MainForm>();
             // Run the application with the main form
             Application.Run(mainForm);
@@ -44,17 +41,33 @@ namespace FootballFieldManagement
                 options.UseSqlServer(connectionString));
 
             // Register Repositpories
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IFieldRepository, FieldRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IBookingRepository, BookingRepository>();
+            services.AddScoped<IBookingDetailRepository, BookingDetailRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
 
             // Register Services
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IFieldService, FieldService>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IBookingService, BookingService>();
+            services.AddScoped<IBookingDetailService, BookingDetailService>();
+            services.AddScoped<IPaymentService, PaymentService>();
 
             // Register Controllers
+            services.AddScoped<UserController>();
             services.AddScoped<FieldController>();
+            services.AddScoped<CustomerController>();
+            services.AddScoped<BookingController>();
+            services.AddScoped<BookingDetailController>();
+            services.AddScoped<PaymentController>();
 
             // Register Forms
-            services.AddTransient<FieldForm>();
             services.AddTransient<MainForm>();
+            services.AddTransient<FieldForm>();
+            services.AddTransient<CustomerForm>();
         }
     }
 }

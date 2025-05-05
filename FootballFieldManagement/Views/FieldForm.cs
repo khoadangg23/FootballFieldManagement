@@ -124,7 +124,6 @@ namespace FootballFieldManagement
                 && dgvFields.Columns[e.ColumnIndex].Name != "DeleteColumn")
                 return;
 
-            var fieldId = (int)dgvFields.Rows[e.RowIndex].Cells["FieldId"].Value;
             var field = (Field)dgvFields.CurrentRow.DataBoundItem;
 
             if (dgvFields.Columns[e.ColumnIndex].Name == "EditColumn")
@@ -143,7 +142,7 @@ namespace FootballFieldManagement
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    _fieldController.DeleteField(fieldId);
+                    _fieldController.DeleteField(field.FieldId);
                     LoadFields();
                 }
             }

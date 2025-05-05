@@ -37,7 +37,7 @@ namespace FootballFieldManagement.Views
             lblTitle.Text = "Cập nhật sân";
             LoadFieldTypes();
             LoadStatusOptions();
-            PopulateFieldData();
+            LoadFieldData();
         }
 
         private void InitializeComponent()
@@ -135,7 +135,7 @@ namespace FootballFieldManagement.Views
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 30);
             this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 
@@ -144,7 +144,7 @@ namespace FootballFieldManagement.Views
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(120, 30);
             this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 
@@ -210,7 +210,7 @@ namespace FootballFieldManagement.Views
                 cboStatus.SelectedIndex = 0;
         }
 
-        private void PopulateFieldData()
+        private void LoadFieldData()
         {
             if (_currentField != null)
             {
