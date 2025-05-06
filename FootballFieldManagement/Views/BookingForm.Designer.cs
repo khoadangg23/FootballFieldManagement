@@ -1,6 +1,6 @@
 ﻿namespace FootballFieldManagement
 {
-    partial class CustomerForm
+    partial class BookingForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
-            bindingSourceField = new BindingSource(components);
-            dgvCustomers = new DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookingForm));
+            bindingSourceBooking = new BindingSource(components);
+            dgvBookings = new DataGridView();
             lblTitle = new Label();
             panelDataGrid = new Panel();
             panelControll = new Panel();
@@ -41,8 +41,8 @@
             btnExport = new Button();
             btnAdd = new Button();
             panelTitle = new Panel();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceField).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceBooking).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
             panelDataGrid.SuspendLayout();
             panelControll.SuspendLayout();
             panelSearch.SuspendLayout();
@@ -50,15 +50,15 @@
             panelTitle.SuspendLayout();
             SuspendLayout();
             // 
-            // dgvCustomers
+            // dgvBookings
             // 
-            dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomers.Dock = DockStyle.Fill;
-            dgvCustomers.Location = new Point(0, 0);
-            dgvCustomers.Name = "dgvCustomers";
-            dgvCustomers.RowHeadersWidth = 51;
-            dgvCustomers.Size = new Size(942, 643);
-            dgvCustomers.TabIndex = 0;
+            dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBookings.Dock = DockStyle.Fill;
+            dgvBookings.Location = new Point(0, 0);
+            dgvBookings.Name = "dgvBookings";
+            dgvBookings.RowHeadersWidth = 51;
+            dgvBookings.Size = new Size(942, 643);
+            dgvBookings.TabIndex = 0;
             // 
             // lblTitle
             // 
@@ -66,14 +66,14 @@
             lblTitle.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblTitle.Location = new Point(3, 7);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(261, 30);
+            lblTitle.Size = new Size(207, 30);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "QUẢN LÝ KHÁCH HÀNG";
+            lblTitle.Text = "QUẢN LÝ ĐẶT SÂN";
             // 
             // panelDataGrid
             // 
             panelDataGrid.AutoScroll = true;
-            panelDataGrid.Controls.Add(dgvCustomers);
+            panelDataGrid.Controls.Add(dgvBookings);
             panelDataGrid.Dock = DockStyle.Fill;
             panelDataGrid.Location = new Point(0, 110);
             panelDataGrid.Name = "panelDataGrid";
@@ -159,7 +159,7 @@
             panelTitle.Size = new Size(942, 40);
             panelTitle.TabIndex = 4;
             // 
-            // CustomerForm
+            // BookingForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -167,10 +167,10 @@
             Controls.Add(panelDataGrid);
             Controls.Add(panelControll);
             Controls.Add(panelTitle);
-            Name = "CustomerForm";
+            Name = "BookingForm";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)bindingSourceField).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceBooking).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvBookings).EndInit();
             panelDataGrid.ResumeLayout(false);
             panelControll.ResumeLayout(false);
             panelSearch.ResumeLayout(false);
@@ -182,8 +182,8 @@
         }
 
         #endregion
-        private BindingSource bindingSourceField;
-        private DataGridView dgvCustomers;
+        private BindingSource bindingSourceBooking;
+        private DataGridView dgvBookings;
         private Label lblTitle;
         private Panel panelDataGrid;
         private Panel panelControll;

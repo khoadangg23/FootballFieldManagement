@@ -42,138 +42,157 @@ namespace FootballFieldManagement.Views
 
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblFieldName = new System.Windows.Forms.Label();
-            this.lblFieldType = new System.Windows.Forms.Label();
-            this.lblPricePerHour = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.txtFieldName = new System.Windows.Forms.TextBox();
-            this.cboFieldType = new System.Windows.Forms.ComboBox();
-            this.numPricePerHour = new System.Windows.Forms.NumericUpDown();
-            this.cboStatus = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numPricePerHour)).BeginInit();
-            this.SuspendLayout();
-
+            lblTitle = new Label();
+            lblFieldName = new Label();
+            lblFieldType = new Label();
+            lblPricePerHour = new Label();
+            lblStatus = new Label();
+            txtFieldName = new TextBox();
+            cboFieldType = new ComboBox();
+            numPricePerHour = new NumericUpDown();
+            cboStatus = new ComboBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            ((System.ComponentModel.ISupportInitialize)numPricePerHour).BeginInit();
+            SuspendLayout();
+            // 
             // lblTitle
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(139, 25);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Add New Field";
-
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblTitle.Location = new Point(14, 12);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(180, 32);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "Add New Field";
+            // 
             // lblFieldName
-            this.lblFieldName.AutoSize = true;
-            this.lblFieldName.Location = new System.Drawing.Point(12, 60);
-            this.lblFieldName.Name = "lblFieldName";
-            this.lblFieldName.Size = new System.Drawing.Size(74, 15);
-            this.lblFieldName.TabIndex = 1;
-            this.lblFieldName.Text = "Tên Sân:";
-
+            // 
+            lblFieldName.AutoSize = true;
+            lblFieldName.Location = new Point(14, 80);
+            lblFieldName.Name = "lblFieldName";
+            lblFieldName.Size = new Size(63, 20);
+            lblFieldName.TabIndex = 1;
+            lblFieldName.Text = "Tên Sân:";
+            // 
             // lblFieldType
-            this.lblFieldType.AutoSize = true;
-            this.lblFieldType.Location = new System.Drawing.Point(12, 100);
-            this.lblFieldType.Name = "lblFieldType";
-            this.lblFieldType.Size = new System.Drawing.Size(67, 15);
-            this.lblFieldType.TabIndex = 2;
-            this.lblFieldType.Text = "Loại Sân:";
-
+            // 
+            lblFieldType.AutoSize = true;
+            lblFieldType.Location = new Point(14, 133);
+            lblFieldType.Name = "lblFieldType";
+            lblFieldType.Size = new Size(68, 20);
+            lblFieldType.TabIndex = 2;
+            lblFieldType.Text = "Loại Sân:";
+            // 
             // lblPricePerHour
-            this.lblPricePerHour.AutoSize = true;
-            this.lblPricePerHour.Location = new System.Drawing.Point(12, 140);
-            this.lblPricePerHour.Name = "lblPricePerHour";
-            this.lblPricePerHour.Size = new System.Drawing.Size(90, 15);
-            this.lblPricePerHour.TabIndex = 3;
-            this.lblPricePerHour.Text = "Giá mỗi giờ:";
-
+            // 
+            lblPricePerHour.AutoSize = true;
+            lblPricePerHour.Location = new Point(14, 187);
+            lblPricePerHour.Name = "lblPricePerHour";
+            lblPricePerHour.Size = new Size(90, 20);
+            lblPricePerHour.TabIndex = 3;
+            lblPricePerHour.Text = "Giá mỗi giờ:";
+            // 
             // lblStatus
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(12, 180);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(42, 15);
-            this.lblStatus.TabIndex = 4;
-            this.lblStatus.Text = "Trạng thái:";
-
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(14, 240);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(78, 20);
+            lblStatus.TabIndex = 4;
+            lblStatus.Text = "Trạng thái:";
+            // 
             // txtFieldName
-            this.txtFieldName.Location = new System.Drawing.Point(118, 57);
-            this.txtFieldName.Name = "txtFieldName";
-            this.txtFieldName.Size = new System.Drawing.Size(250, 23);
-            this.txtFieldName.TabIndex = 5;
-
+            // 
+            txtFieldName.Location = new Point(135, 76);
+            txtFieldName.Margin = new Padding(3, 4, 3, 4);
+            txtFieldName.Name = "txtFieldName";
+            txtFieldName.Size = new Size(285, 27);
+            txtFieldName.TabIndex = 5;
+            // 
             // cboFieldType
-            this.cboFieldType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFieldType.FormattingEnabled = true;
-            this.cboFieldType.Location = new System.Drawing.Point(118, 97);
-            this.cboFieldType.Name = "cboFieldType";
-            this.cboFieldType.Size = new System.Drawing.Size(250, 23);
-            this.cboFieldType.TabIndex = 6;
-
+            // 
+            cboFieldType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboFieldType.FormattingEnabled = true;
+            cboFieldType.Location = new Point(135, 129);
+            cboFieldType.Margin = new Padding(3, 4, 3, 4);
+            cboFieldType.Name = "cboFieldType";
+            cboFieldType.Size = new Size(285, 28);
+            cboFieldType.TabIndex = 6;
+            // 
             // numPricePerHour
-            this.numPricePerHour.DecimalPlaces = 2;
-            this.numPricePerHour.Increment = new decimal(new int[] { 10000, 0, 0, 0 });
-            this.numPricePerHour.Location = new System.Drawing.Point(118, 138);
-            this.numPricePerHour.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
-            this.numPricePerHour.Name = "numPricePerHour";
-            this.numPricePerHour.Size = new System.Drawing.Size(250, 23);
-            this.numPricePerHour.TabIndex = 7;
-            this.numPricePerHour.ThousandsSeparator = true;
-            this.numPricePerHour.Value = new decimal(new int[] { 100000, 0, 0, 0 });
-
+            // 
+            numPricePerHour.DecimalPlaces = 2;
+            numPricePerHour.Increment = new decimal(new int[] { 10000, 0, 0, 0 });
+            numPricePerHour.Location = new Point(135, 184);
+            numPricePerHour.Margin = new Padding(3, 4, 3, 4);
+            numPricePerHour.Maximum = new decimal(new int[] { 10000000, 0, 0, 0 });
+            numPricePerHour.Name = "numPricePerHour";
+            numPricePerHour.Size = new Size(286, 27);
+            numPricePerHour.TabIndex = 7;
+            numPricePerHour.ThousandsSeparator = true;
+            numPricePerHour.Value = new decimal(new int[] { 100000, 0, 0, 0 });
+            // 
             // cboStatus
-            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(118, 177);
-            this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(250, 23);
-            this.cboStatus.TabIndex = 8;
-
+            // 
+            cboStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboStatus.FormattingEnabled = true;
+            cboStatus.Location = new Point(135, 236);
+            cboStatus.Margin = new Padding(3, 4, 3, 4);
+            cboStatus.Name = "cboStatus";
+            cboStatus.Size = new Size(285, 28);
+            cboStatus.TabIndex = 8;
+            // 
             // btnSave
-            this.btnSave.Location = new System.Drawing.Point(118, 220);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 30);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-
+            // 
+            btnSave.Location = new Point(135, 293);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(137, 40);
+            btnSave.TabIndex = 9;
+            btnSave.Text = "Lưu";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
             // btnCancel
-            this.btnCancel.Location = new System.Drawing.Point(248, 220);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 30);
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-
-            // FieldForm
-            this.AcceptButton = this.btnSave;
-            this.CancelButton = this.btnCancel;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 271);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cboStatus);
-            this.Controls.Add(this.numPricePerHour);
-            this.Controls.Add(this.cboFieldType);
-            this.Controls.Add(this.txtFieldName);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.lblPricePerHour);
-            this.Controls.Add(this.lblFieldType);
-            this.Controls.Add(this.lblFieldName);
-            this.Controls.Add(this.lblTitle);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "AddFieldForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Add New Field";
-            ((System.ComponentModel.ISupportInitialize)(this.numPricePerHour)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            btnCancel.Location = new Point(283, 293);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(137, 40);
+            btnCancel.TabIndex = 10;
+            btnCancel.Text = "Hủy";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // AddOrUpdateFieldForm
+            // 
+            AcceptButton = btnSave;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancel;
+            ClientSize = new Size(439, 361);
+            Controls.Add(btnCancel);
+            Controls.Add(btnSave);
+            Controls.Add(cboStatus);
+            Controls.Add(numPricePerHour);
+            Controls.Add(cboFieldType);
+            Controls.Add(txtFieldName);
+            Controls.Add(lblStatus);
+            Controls.Add(lblPricePerHour);
+            Controls.Add(lblFieldType);
+            Controls.Add(lblFieldName);
+            Controls.Add(lblTitle);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "AddOrUpdateFieldForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Add New Field";
+            ((System.ComponentModel.ISupportInitialize)numPricePerHour).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.Label lblTitle;

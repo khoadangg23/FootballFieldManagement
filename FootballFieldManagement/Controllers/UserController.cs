@@ -27,6 +27,11 @@ namespace FootballFieldManagement.Controllers
             return _userService.GetUserById(id);
         }
 
+        public User GetUserByUsername(string username)
+        {
+            return _userService.GetUserByUsername(username);
+        }
+
         public void AddUser(User user)
         {
             _userService.AddUser(user);
@@ -35,6 +40,16 @@ namespace FootballFieldManagement.Controllers
         public void UpdateUser(User user)
         {
             _userService.UpdateUser(user);
+        }
+
+        public void DeleteUser(int id)
+        {
+            _userService.DeleteUser(id);
+        }
+
+        public bool ValidateUser(string username, string password)
+        {
+            return _userService.ValidateUser(username, password);
         }
     }
 }

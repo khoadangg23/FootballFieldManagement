@@ -38,7 +38,6 @@
             panelSearch = new Panel();
             picSearchIcon = new PictureBox();
             txtSearch = new TextBox();
-            btnImport = new Button();
             btnExport = new Button();
             btnAdd = new Button();
             panelTitle = new Panel();
@@ -84,7 +83,6 @@
             // panelControll
             // 
             panelControll.Controls.Add(panelSearch);
-            panelControll.Controls.Add(btnImport);
             panelControll.Controls.Add(btnExport);
             panelControll.Controls.Add(btnAdd);
             panelControll.Dock = DockStyle.Top;
@@ -125,16 +123,6 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(305, 27);
             txtSearch.TabIndex = 1;
-            // 
-            // btnImport
-            // 
-            btnImport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnImport.Location = new Point(518, 9);
-            btnImport.Name = "btnImport";
-            btnImport.Size = new Size(100, 40);
-            btnImport.TabIndex = 2;
-            btnImport.Text = "Nhập";
-            btnImport.UseVisualStyleBackColor = true;
             // 
             // btnExport
             // 
@@ -179,7 +167,7 @@
             Controls.Add(panelDataGrid);
             Controls.Add(panelControll);
             Controls.Add(panelTitle);
-            Name = "AddOrUpdateFieldForm";
+            Name = "FieldForm";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)bindingSourceField).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvFields).EndInit();
@@ -202,7 +190,6 @@
         private Panel panelSearch;
         private PictureBox picSearchIcon;
         private TextBox txtSearch;
-        private Button btnImport;
         private Button btnExport;
         private Button btnAdd;
         private Panel panelTitle;

@@ -5,6 +5,7 @@ using FootballFieldManagement.Repositories.Implementations;
 using FootballFieldManagement.Repositories.Interfaces;
 using FootballFieldManagement.Services.Implementations;
 using FootballFieldManagement.Services.Interfaces;
+using FootballFieldManagement.Views;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -28,9 +29,25 @@ namespace FootballFieldManagement
             // Build the service provider
             var serviceProvider = servicesCollection.BuildServiceProvider();
 
-            var mainForm = serviceProvider.GetRequiredService<MainForm>();
-            // Run the application with the main form
-            Application.Run(mainForm);
+
+            // 1. Resolve LoginForm t? ServiceProvider
+            var loginForm = serviceProvider.GetRequiredService<LoginForm>();
+
+            // 2. Hi?n th? LoginForm d??i d?ng modal dialog
+            // Application.Run() CH?A ch?y ? ?ây. ShowDialog() có vòng l?p thông ?i?p riêng.
+            DialogResult result = loginForm.ShowDialog();
+
+            // 3. Ki?m tra k?t qu? c?a Dialog (khi LoginForm ?óng l?i)
+            if (result == DialogResult.OK)
+            {
+                // 4. N?u ??ng nh?p thành công (LoginForm ??t DialogResult = OK và ?óng):
+                // Resolve MainForm t? ServiceProvider
+                var mainForm = serviceProvider.GetRequiredService<MainForm>();
+
+                // Ch?y ?ng d?ng chính v?i MainForm.
+                // Vòng l?p thông ?i?p chính c?a ?ng d?ng b?t ??u t? ?ây.
+                Application.Run(mainForm);
+            }
         }
 
         private static void ConfigureServices(IServiceCollection services)
@@ -56,6 +73,9 @@ namespace FootballFieldManagement
             services.AddScoped<IBookingDetailService, BookingDetailService>();
             services.AddScoped<IPaymentService, PaymentService>();
 
+            // Register Session Service
+            services.AddSingleton<ISessionService, SessionService>();
+
             // Register Controllers
             services.AddScoped<UserController>();
             services.AddScoped<FieldController>();
@@ -65,9 +85,13 @@ namespace FootballFieldManagement
             services.AddScoped<PaymentController>();
 
             // Register Forms
+            services.AddTransient<LoginForm>();
             services.AddTransient<MainForm>();
+            services.AddTransient<BookingForm>();
             services.AddTransient<FieldForm>();
             services.AddTransient<CustomerForm>();
+            services.AddTransient<UserForm>();
+            services.AddTransient<AddBookingForm>();
         }
     }
 }

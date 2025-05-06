@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FootballFieldManagement.Models;
 using FootballFieldManagement.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace FootballFieldManagement.Repositories.Implementations
 {
@@ -17,7 +18,12 @@ namespace FootballFieldManagement.Repositories.Implementations
         }
         public IEnumerable<Booking> GetAll()
         {
-            return _context.Bookings.ToList();
+            return _context.Bookings
+                .Include(b => b.Customer)
+                .Include(b => b.User)
+                .Include(b => b.BookingDetails)
+                    .ThenInclude(d => d.Field)
+                .ToList();
         }
         public Booking GetById(int id)
         {

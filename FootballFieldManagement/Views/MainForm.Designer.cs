@@ -37,13 +37,13 @@ namespace FootballFieldManagement
             lblUserName = new Label();
             picAvtUser = new PictureBox();
             btnLogout = new Button();
-            btnReport = new Button();
             btnUser = new Button();
             btnField = new Button();
             btnCustomer = new Button();
             btnBooking = new Button();
             picLogo = new PictureBox();
             panelMainContent = new Panel();
+            btnReport = new Button();
             panelSideNav.SuspendLayout();
             panelUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAvtUser).BeginInit();
@@ -129,23 +129,6 @@ namespace FootballFieldManagement
             btnLogout.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
-            // 
-            // btnReport
-            // 
-            btnReport.Dock = DockStyle.Top;
-            btnReport.FlatAppearance.BorderSize = 0;
-            btnReport.FlatAppearance.MouseOverBackColor = Color.FromArgb(160, 255, 160);
-            btnReport.FlatStyle = FlatStyle.Flat;
-            btnReport.Font = new Font("Segoe UI", 12F);
-            btnReport.Image = (Image)resources.GetObject("btnReport.Image");
-            btnReport.Location = new Point(16, 416);
-            btnReport.Name = "btnReport";
-            btnReport.Size = new Size(208, 80);
-            btnReport.TabIndex = 5;
-            btnReport.Text = " Thống kê";
-            btnReport.TextAlign = ContentAlignment.MiddleLeft;
-            btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnReport.UseVisualStyleBackColor = true;
             // 
             // btnUser
             // 
@@ -240,6 +223,23 @@ namespace FootballFieldManagement
             panelMainContent.Size = new Size(942, 753);
             panelMainContent.TabIndex = 1;
             // 
+            // btnReport
+            // 
+            btnReport.Dock = DockStyle.Top;
+            btnReport.FlatAppearance.BorderSize = 0;
+            btnReport.FlatAppearance.MouseOverBackColor = Color.FromArgb(160, 255, 160);
+            btnReport.FlatStyle = FlatStyle.Flat;
+            btnReport.Font = new Font("Segoe UI", 12F);
+            btnReport.Image = (Image)resources.GetObject("btnReport.Image");
+            btnReport.Location = new Point(16, 416);
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(208, 80);
+            btnReport.TabIndex = 5;
+            btnReport.Text = " Thống kê";
+            btnReport.TextAlign = ContentAlignment.MiddleLeft;
+            btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReport.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -267,12 +267,12 @@ namespace FootballFieldManagement
         private Button btnCustomer;
         private Button btnField;
         private Button btnUser;
-        private Button btnReport;
         private Button btnLogout;
         private Label lblUserName;
         private PictureBox picAvtUser;
         private Label lblUserRole;
         private Panel panelUserInfo;
         private string imagePath;
+        private Button btnReport;
     }
 }

@@ -16,7 +16,7 @@ namespace FootballFieldManagement
 
             this.Load += CustomerForm_Load;
             btnAdd.Click += BtnAdd_Click;
-            dgvCustomers.CellContentClick += dgvFields_CellContentClick;
+            dgvCustomers.CellContentClick += dgvCustomers_CellContentClick;
             txtSearch.TextChanged += txtSearch_TextChanged;
             btnExport.Click += btnExport_Click;
         }
@@ -27,7 +27,7 @@ namespace FootballFieldManagement
             LoadCustomers();
             ConfigureDataGridView();
 
-            txtSearch.PlaceholderText = "Tìm ID Sân, Tên Sân hoặc Loại Sân";
+            txtSearch.PlaceholderText = "Tìm ID, tên hoặc số điện thoại khách hàng";
         }
 
         private void LoadCustomers()
@@ -103,13 +103,13 @@ namespace FootballFieldManagement
             {
                 if (addForm.ShowDialog() == DialogResult.OK)
                 {
-                    // Refresh your fields list here
+                    // reload
                     LoadCustomers();
                 }
             }
         }
 
-        private void dgvFields_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return; // Ignore header row
             if (e.ColumnIndex < 0) return; // Ignore header column

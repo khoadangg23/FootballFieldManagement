@@ -23,6 +23,12 @@ namespace FootballFieldManagement.Repositories.Implementations
         {
             return _context.Users.Find(id);
         }
+
+        public User GetByUsername(string username)
+        {
+            return _context.Users.FirstOrDefault(u => u.Username == username);
+        }
+
         public void Add(User user)
         {
             _context.Users.Add(user);

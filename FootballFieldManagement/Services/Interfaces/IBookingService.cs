@@ -11,8 +11,10 @@ namespace FootballFieldManagement.Services.Interfaces
     {
         IEnumerable<Booking> GetAllBookings();
         Booking GetBookingById(int id);
-        void AddBooking(Booking booking);
+        int AddBooking(Booking booking);
         void UpdateBooking(Booking booking);
         void DeleteBooking(int id);
+
+        IEnumerable<Booking> GetBookingsByFieldAndDate(int fieldId, DateTime date);
     }
 }

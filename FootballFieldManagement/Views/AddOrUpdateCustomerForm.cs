@@ -180,7 +180,7 @@ namespace FootballFieldManagement.Views
         {
             if (_isUpdateMode)
             {
-                lblTitle.Text = "Cập nhật khách hàng";
+                lblTitle.Text = "Cập nhật thông tin khách hàng";
             }
         }
 
@@ -208,7 +208,7 @@ namespace FootballFieldManagement.Views
 
                     _customerController.UpdateCustomer(_customer);
 
-                    MessageBox.Show("Cập nhật Khách hàng thành công!", "Success",
+                    MessageBox.Show("Cập nhật khách hàng thành công!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -224,7 +224,7 @@ namespace FootballFieldManagement.Views
 
                     _customerController.AddCustomer(customer);
 
-                    MessageBox.Show("Thêm Khách hàng thành công!", "Success",
+                    MessageBox.Show("Thêm khách hàng thành công!", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -252,25 +252,25 @@ namespace FootballFieldManagement.Views
                 return false;
             }
 
-            // Additional validation for phone number format
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtPhoneNumber.Text, @"^\d{10}$"))
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng nhập 10 số!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtPhoneNumber.Focus();
-                return false;
-            }
+            //// Additional validation for phone number format
+            //if (!System.Text.RegularExpressions.Regex.IsMatch(txtPhoneNumber.Text, @"^\d{10}$"))
+            //{
+            //    MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng nhập 10 số!", "Thông báo",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    txtPhoneNumber.Focus();
+            //    return false;
+            //}
 
-            // Email validation if provided
-            if (!string.IsNullOrWhiteSpace(txtEmail.Text) &&
-                !System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text,
-                @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
-            {
-                MessageBox.Show("Email không hợp lệ!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtEmail.Focus();
-                return false;
-            }
+            //// Email validation if provided
+            //if (!string.IsNullOrWhiteSpace(txtEmail.Text) &&
+            //    !System.Text.RegularExpressions.Regex.IsMatch(txtEmail.Text,
+            //    @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            //{
+            //    MessageBox.Show("Email không hợp lệ!", "Thông báo",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    txtEmail.Focus();
+            //    return false;
+            //}
 
             return true;
         }

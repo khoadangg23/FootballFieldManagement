@@ -24,9 +24,10 @@ namespace FootballFieldManagement.Services.Implementations
         {
             return _bookingRepository.GetById(id);
         }
-        public void AddBooking(Booking booking)
+        public int AddBooking(Booking booking)
         {
             _bookingRepository.Add(booking);
+            return booking.BookingId;
         }
         public void UpdateBooking(Booking booking)
         {
@@ -35,6 +36,12 @@ namespace FootballFieldManagement.Services.Implementations
         public void DeleteBooking(int id)
         {
             _bookingRepository.Delete(id);
+        }
+
+        public IEnumerable<Booking> GetBookingsByFieldAndDate(int fieldId, DateTime date)
+        {
+            var bookings = _bookingRepository.GetAll();
+            return bookings.Where(b => b.BookingDate == DateOnly.FromDateTime(date) && b.BookingDetails.Any(bd => bd.FieldId == fieldId));
         }
     }
 }

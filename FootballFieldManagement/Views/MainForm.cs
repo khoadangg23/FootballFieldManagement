@@ -1,4 +1,5 @@
 ﻿using FootballFieldManagement.Controllers;
+using FootballFieldManagement.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FootballFieldManagement
@@ -6,33 +7,34 @@ namespace FootballFieldManagement
     public partial class MainForm : Form
     {
         private readonly IServiceProvider _serviceProvider;
+        private readonly ISessionService _sessionService;
         private Form _activeChildForm = null;
         private Button _activeButton = null;
 
-        public MainForm(IServiceProvider serviceProvider)
+        public MainForm(IServiceProvider serviceProvider, ISessionService sessionService)
         {
             InitializeComponent();
             _serviceProvider = serviceProvider;
-            //SetUserInfo();
+            _sessionService = sessionService;
+            SetUserInfo();
 
         }
 
-        //private void SetUserInfo()
-        //{
-        //    lblUserName.Text = AppSession.CurrentUser.FullName;
-        //    lblRole.Text = AppSession.CurrentUser.Role;
+        private void SetUserInfo()
+        {
+            lblUserName.Text = _sessionService.GetCurrentUser().FullName;
+            lblUserRole.Text = _sessionService.GetCurrentUser().Role;
 
-        //    // Phân quyền menu dựa vào role
-        //    if (AppSession.CurrentUser.Role != "Admin")
-        //    {
-        //        btnUserManagement.Visible = false;
-        //    }
-        //}
+            // Phân quyền menu dựa vào role
+            if (_sessionService.GetCurrentUser().Role != "Admin")
+            {
+            }
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Khi load form chính, tạo FieldForm bằng DI
-            LoadChildForm(_serviceProvider.GetRequiredService<FieldForm>());
+            LoadChildForm(_serviceProvider.GetRequiredService<BookingForm>());
         }
 
         private void LoadChildForm(Form childForm)
@@ -64,7 +66,8 @@ namespace FootballFieldManagement
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
-            LoadChildForm(new FieldForm());
+            // Khi click nút, tạo UserForm bằng DI
+            LoadChildForm(_serviceProvider.GetRequiredService<BookingForm>());
             highlightButton((Button)sender);
         }
 
@@ -84,12 +87,14 @@ namespace FootballFieldManagement
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            LoadChildForm(new FieldForm());
+            // Khi click nút, tạo UserForm bằng DI
+            LoadChildForm(_serviceProvider.GetRequiredService<UserForm>());
             highlightButton((Button)sender);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            _sessionService.ClearCurrentUser();
             this.Close();
         }
     }

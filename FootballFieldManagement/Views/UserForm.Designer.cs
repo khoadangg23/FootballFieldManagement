@@ -1,6 +1,6 @@
 ﻿namespace FootballFieldManagement
 {
-    partial class CustomerForm
+    partial class UserForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,20 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
-            bindingSourceField = new BindingSource(components);
-            dgvCustomers = new DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
+            bindingSourceUser = new BindingSource(components);
+            dgvUsers = new DataGridView();
             lblTitle = new Label();
             panelDataGrid = new Panel();
             panelControll = new Panel();
             panelSearch = new Panel();
             picSearchIcon = new PictureBox();
             txtSearch = new TextBox();
-            btnExport = new Button();
             btnAdd = new Button();
             panelTitle = new Panel();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceField).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceUser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             panelDataGrid.SuspendLayout();
             panelControll.SuspendLayout();
             panelSearch.SuspendLayout();
@@ -50,15 +49,15 @@
             panelTitle.SuspendLayout();
             SuspendLayout();
             // 
-            // dgvCustomers
+            // dgvUsers
             // 
-            dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomers.Dock = DockStyle.Fill;
-            dgvCustomers.Location = new Point(0, 0);
-            dgvCustomers.Name = "dgvCustomers";
-            dgvCustomers.RowHeadersWidth = 51;
-            dgvCustomers.Size = new Size(942, 643);
-            dgvCustomers.TabIndex = 0;
+            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsers.Dock = DockStyle.Fill;
+            dgvUsers.Location = new Point(0, 0);
+            dgvUsers.Name = "dgvUsers";
+            dgvUsers.RowHeadersWidth = 51;
+            dgvUsers.Size = new Size(942, 643);
+            dgvUsers.TabIndex = 0;
             // 
             // lblTitle
             // 
@@ -66,14 +65,14 @@
             lblTitle.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblTitle.Location = new Point(3, 7);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(261, 30);
+            lblTitle.Size = new Size(236, 30);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "QUẢN LÝ KHÁCH HÀNG";
+            lblTitle.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
             // panelDataGrid
             // 
             panelDataGrid.AutoScroll = true;
-            panelDataGrid.Controls.Add(dgvCustomers);
+            panelDataGrid.Controls.Add(dgvUsers);
             panelDataGrid.Dock = DockStyle.Fill;
             panelDataGrid.Location = new Point(0, 110);
             panelDataGrid.Name = "panelDataGrid";
@@ -83,7 +82,6 @@
             // panelControll
             // 
             panelControll.Controls.Add(panelSearch);
-            panelControll.Controls.Add(btnExport);
             panelControll.Controls.Add(btnAdd);
             panelControll.Dock = DockStyle.Top;
             panelControll.Location = new Point(0, 40);
@@ -124,16 +122,6 @@
             txtSearch.Size = new Size(305, 27);
             txtSearch.TabIndex = 1;
             // 
-            // btnExport
-            // 
-            btnExport.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExport.Location = new Point(624, 9);
-            btnExport.Name = "btnExport";
-            btnExport.Size = new Size(100, 40);
-            btnExport.TabIndex = 3;
-            btnExport.Text = "Xuất";
-            btnExport.UseVisualStyleBackColor = true;
-            // 
             // btnAdd
             // 
             btnAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -159,7 +147,7 @@
             panelTitle.Size = new Size(942, 40);
             panelTitle.TabIndex = 4;
             // 
-            // CustomerForm
+            // UserForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -167,10 +155,10 @@
             Controls.Add(panelDataGrid);
             Controls.Add(panelControll);
             Controls.Add(panelTitle);
-            Name = "CustomerForm";
+            Name = "UserForm";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)bindingSourceField).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceUser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             panelDataGrid.ResumeLayout(false);
             panelControll.ResumeLayout(false);
             panelSearch.ResumeLayout(false);
@@ -182,15 +170,14 @@
         }
 
         #endregion
-        private BindingSource bindingSourceField;
-        private DataGridView dgvCustomers;
+        private BindingSource bindingSourceUser;
+        private DataGridView dgvUsers;
         private Label lblTitle;
         private Panel panelDataGrid;
         private Panel panelControll;
         private Panel panelSearch;
         private PictureBox picSearchIcon;
         private TextBox txtSearch;
-        private Button btnExport;
         private Button btnAdd;
         private Panel panelTitle;
     }

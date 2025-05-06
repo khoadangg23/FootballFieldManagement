@@ -32,7 +32,7 @@ namespace FootballFieldManagement
             LoadFields();
             ConfigureDataGridView();
 
-            txtSearch.PlaceholderText = "Tìm ID Sân, Tên Sân hoặc Loại Sân";
+            txtSearch.PlaceholderText = "Tìm ID, tên hoặc loại sân";
         }
 
         private void LoadFields()
