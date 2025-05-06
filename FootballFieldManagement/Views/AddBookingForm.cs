@@ -116,8 +116,10 @@ namespace FootballFieldManagement.Views
                 string typeField = (string)cmbFieldType.SelectedItem; // Lấy loại sân bóng đã chọn
 
                 var fields = _fieldService.GetAllFields();
-                cmbFieldName.DataSource = fields.Where(f => f.FieldType == typeField)
-                                                .ToList(); // Lấy danh sách loại sân bóng duy nhất
+                cmbFieldName.DataSource = fields
+                    .Where(f => f.Status != "Bảo trì") // Lọc sân còn trống
+                    .Where(f => f.FieldType == typeField)
+                    .ToList(); // Lấy danh sách loại sân bóng duy nhất
                 cmbFieldName.DisplayMember = "FieldName"; // Tên hiển thị trong ComboBox
                 cmbFieldName.ValueMember = "FieldId";
 
@@ -131,7 +133,7 @@ namespace FootballFieldManagement.Views
             if (cmbFieldName.SelectedItem != null)
             {
                 _selectedField = (Field)cmbFieldName.SelectedItem; // Lấy đối tượng Field đã chọn
-                                                                   // Sau khi có sân chọn, cập nhật hiển thị khung giờ
+                
                 LoadHourButtons();
             }
         }
@@ -139,7 +141,25 @@ namespace FootballFieldManagement.Views
         private void dtpBookingDate_ValueChanged(object sender, EventArgs e)
         {
             _selectedDate = dtpBookingDate.Value.Date; // Chỉ lấy phần ngày
-                                                   // Sau khi có ngày chọn, cập nhật hiển thị khung giờ
+            if (_selectedDate < DateTime.Today)
+            {
+                MessageBox.Show("Ngày đặt sân không được nhỏ hơn ngày hiện tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpBookingDate.Value = DateTime.Today; // Đặt lại ngày về hôm nay
+                return;
+            }
+            // Nếu ngày đã chọn là hôm nay, lấy giờ hiện tại
+            if (_selectedDate == DateTime.Today)
+            {
+                // Lấy giờ hiện tại
+                int currentHour = DateTime.Now.Hour;
+                // Lấy danh sách giờ đã đặt từ giờ hiện tại trở đi
+                _pastHours = Enumerable.Range(0, currentHour).ToList();
+            }
+            else
+            {
+                // Nếu không phải hôm nay, không có giờ quá khứ
+                _pastHours = new List<int>();
+            }
             LoadHourButtons();
         }
 

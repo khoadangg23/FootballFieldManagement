@@ -26,7 +26,7 @@ CREATE TABLE Fields (
     FieldName NVARCHAR(100) NOT NULL,
     FieldType NVARCHAR(50),
     PricePerHour DECIMAL(18, 2) NOT NULL,
-    Status NVARCHAR(50) -- Có sẵn, Đã đặt, Đang sử dụng, Bảo trì
+    Status NVARCHAR(50) -- Có sẵn, Đã đặt, Bảo trì
 );
 GO
 
@@ -83,19 +83,19 @@ CREATE TABLE Payments (
 GO
 
 INSERT INTO Users (Username, PasswordHash, FullName, Role, IsActive) VALUES
-('admin', 'hashed_admin_xyz', N'Nguyễn Văn Quản Trị', N'Admin', 1),
-('manager', 'hashed_manager_uvw', N'Trần Thị Quản Lý', N'Manager', 1),
-('nhanvien1', 'hashed_nv1_rst', N'Lê Minh Nhân', N'Staff', 1),
-('nhanvien2', 'hashed_nv2_opq', N'Phạm Thị Viên', N'Staff', 1),
-('nhanvien3', 'hashed_nv3_klm', N'Hoàng Văn An', N'Staff', 0);
+('admin', 'admin123', N'Nguyễn Văn Quản Trị', N'Admin', 1),
+('manager', 'manager123', N'Trần Thị Quản Lý', N'Manager', 1),
+('nhanvien1', 'nhanvien1', N'Lê Minh Nhân', N'Staff', 1),
+('nhanvien2', 'nhanvien2', N'Phạm Thị Viên', N'Staff', 1),
+('nhanvien3', 'nhanvien3', N'Hoàng Văn An', N'Staff', 1);
 GO
 
 -- Dữ liệu mẫu cho bảng Fields
 INSERT INTO Fields (FieldName, FieldType, PricePerHour, Status) VALUES
 (N'Sân 5A', N'Sân 5', 100.00, N'Có sẵn'),
-(N'Sân 5B', N'Sân 5', 100.00, N'Đã đặt'),
+(N'Sân 5B', N'Sân 5', 100.00, N'Có sẵn'),
 (N'Sân 7A', N'Sân 7', 200.00, N'Có sẵn'),
-(N'Sân 7B', N'Sân 7', 200.00, N'Bảo trì'),
+(N'Sân 7B', N'Sân 7', 200.00, N'Có Sẵn'),
 (N'Sân 11', N'Sân 11', 300.00, N'Có sẵn');
 GO
 

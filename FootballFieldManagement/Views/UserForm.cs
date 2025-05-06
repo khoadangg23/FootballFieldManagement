@@ -45,7 +45,7 @@ namespace FootballFieldManagement
             //dgvCustomers.Columns["Email"].HeaderText = "Email";
             //dgvCustomers.Columns["Address"].HeaderText = "Địa chỉ";
             //// Ẩn cột
-            //dgvCustomers.Columns["Bookings"].Visible = false;
+            dgvUsers.Columns["PasswordHash"].Visible = false;
 
             // Thêm cột nút Sửa
             DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();

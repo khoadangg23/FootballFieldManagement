@@ -37,13 +37,14 @@ namespace FootballFieldManagement
             lblUserName = new Label();
             picAvtUser = new PictureBox();
             btnLogout = new Button();
+            btnReport = new Button();
             btnUser = new Button();
             btnField = new Button();
             btnCustomer = new Button();
             btnBooking = new Button();
             picLogo = new PictureBox();
             panelMainContent = new Panel();
-            btnReport = new Button();
+            btnChangePassword = new Button();
             panelSideNav.SuspendLayout();
             panelUserInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAvtUser).BeginInit();
@@ -70,6 +71,7 @@ namespace FootballFieldManagement
             // 
             // panelUserInfo
             // 
+            panelUserInfo.Controls.Add(btnChangePassword);
             panelUserInfo.Controls.Add(lblUserRole);
             panelUserInfo.Controls.Add(lblUserName);
             panelUserInfo.Controls.Add(picAvtUser);
@@ -129,6 +131,23 @@ namespace FootballFieldManagement
             btnLogout.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
+            // 
+            // btnReport
+            // 
+            btnReport.Dock = DockStyle.Top;
+            btnReport.FlatAppearance.BorderSize = 0;
+            btnReport.FlatAppearance.MouseOverBackColor = Color.FromArgb(160, 255, 160);
+            btnReport.FlatStyle = FlatStyle.Flat;
+            btnReport.Font = new Font("Segoe UI", 12F);
+            btnReport.Image = (Image)resources.GetObject("btnReport.Image");
+            btnReport.Location = new Point(16, 416);
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(208, 80);
+            btnReport.TabIndex = 5;
+            btnReport.Text = "Thanh toán";
+            btnReport.TextAlign = ContentAlignment.MiddleLeft;
+            btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReport.UseVisualStyleBackColor = true;
             // 
             // btnUser
             // 
@@ -223,22 +242,17 @@ namespace FootballFieldManagement
             panelMainContent.Size = new Size(942, 753);
             panelMainContent.TabIndex = 1;
             // 
-            // btnReport
+            // btnChangePassword
             // 
-            btnReport.Dock = DockStyle.Top;
-            btnReport.FlatAppearance.BorderSize = 0;
-            btnReport.FlatAppearance.MouseOverBackColor = Color.FromArgb(160, 255, 160);
-            btnReport.FlatStyle = FlatStyle.Flat;
-            btnReport.Font = new Font("Segoe UI", 12F);
-            btnReport.Image = (Image)resources.GetObject("btnReport.Image");
-            btnReport.Location = new Point(16, 416);
-            btnReport.Name = "btnReport";
-            btnReport.Size = new Size(208, 80);
-            btnReport.TabIndex = 5;
-            btnReport.Text = " Thống kê";
-            btnReport.TextAlign = ContentAlignment.MiddleLeft;
-            btnReport.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnReport.UseVisualStyleBackColor = true;
+            btnChangePassword.Dock = DockStyle.Bottom;
+            btnChangePassword.FlatAppearance.BorderSize = 0;
+            btnChangePassword.FlatStyle = FlatStyle.Flat;
+            btnChangePassword.Location = new Point(10, 121);
+            btnChangePassword.Name = "btnChangePassword";
+            btnChangePassword.Size = new Size(188, 29);
+            btnChangePassword.TabIndex = 11;
+            btnChangePassword.Text = "Đổi mật khẩu";
+            btnChangePassword.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -274,5 +288,6 @@ namespace FootballFieldManagement
         private Panel panelUserInfo;
         private string imagePath;
         private Button btnReport;
+        private Button btnChangePassword;
     }
 }

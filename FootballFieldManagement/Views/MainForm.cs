@@ -1,5 +1,6 @@
 ﻿using FootballFieldManagement.Controllers;
 using FootballFieldManagement.Services.Interfaces;
+using FootballFieldManagement.Views;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FootballFieldManagement
@@ -18,6 +19,7 @@ namespace FootballFieldManagement
             _sessionService = sessionService;
             SetUserInfo();
 
+            btnChangePassword.Click += btnChangePassword_Click;
         }
 
         private void SetUserInfo()
@@ -26,8 +28,10 @@ namespace FootballFieldManagement
             lblUserRole.Text = _sessionService.GetCurrentUser().Role;
 
             // Phân quyền menu dựa vào role
-            if (_sessionService.GetCurrentUser().Role != "Admin")
+            if (_sessionService.GetCurrentUser().Role == "Staff")
             {
+                btnUser.Visible = false;
+                btnField.Visible = false;
             }
         }
 
@@ -96,6 +100,13 @@ namespace FootballFieldManagement
         {
             _sessionService.ClearCurrentUser();
             this.Close();
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            // Khi click nút, tạo PasswordChangeForm bằng DI
+            var passwordChangeForm = _serviceProvider.GetRequiredService<PasswordChangeForm>();
+            passwordChangeForm.ShowDialog();
         }
     }
 }

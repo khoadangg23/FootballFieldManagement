@@ -31,7 +31,7 @@ namespace FootballFieldManagement
             LoadBookings();
             ConfigureDataGridView();
 
-            txtSearch.PlaceholderText = "Tìm ID đơn, tên khách hàng, ";
+            txtSearch.PlaceholderText = "Tìm ID đơn, tên khách hàng";
         }
 
         private void LoadBookings()

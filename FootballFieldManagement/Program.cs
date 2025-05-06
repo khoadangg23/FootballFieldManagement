@@ -92,6 +92,7 @@ namespace FootballFieldManagement
             services.AddTransient<CustomerForm>();
             services.AddTransient<UserForm>();
             services.AddTransient<AddBookingForm>();
+            services.AddTransient<PasswordChangeForm>();
         }
     }
 }
